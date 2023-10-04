@@ -1,0 +1,2 @@
+# dontphishme
+Gophish obfuscator script
