@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Dontphishme! - v0.1
+# Dontphishme! - v0.2
 #
 # w41l3r
 #
@@ -52,20 +52,21 @@ sudo sed -i.bkp 's/const RecipientParameter = "rid"/const RecipientParameter = "
 
 ###creating a "not a Gophish server" 404 page
 sudo mv controllers/phish.go controllers/phish.go.bkp
-sudo wget --quiet -P controllers/ https://github.com/edermi/gophish_mods/blob/master/controllers/phish.go
+sudo wget --quiet -P controllers/ https://github.com/puzzlepeaches/sneaky_gophish/raw/main/files/phish.go
 if [ $? -ne 0 ];then
 	echo "Error downloading phish.go - This is not critical but you should consider solving that.."
-	echo "Try manually downloading https://github.com/edermi/gophish_mods/blob/master/controllers/phish.go into controllers dir."
+	echo "Try manually downloading https://github.com/puzzlepeaches/sneaky_gophish/raw/main/files/phish.go into controllers dir."
 	sudo mv controllers/phish.go.bkp controllers/phish.go
 	echo "Continue..."
 fi
-echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""http://www.w3.org/TR/html4/strict.dtd">' > /tmp/404.html
-echo '<HTML><HEAD><TITLE>Not Found</TITLE>' >> /tmp/404.html
-echo '<META HTTP-EQUIV="Content-Type" Content="text/html; charset=us-ascii"></HEAD>' >> /tmp/404.html
-echo '<BODY><h2>Not Found</h2>' >> /tmp/404.html
-echo '<hr><p>HTTP Error 404. The requested resource is not found.</p>' >> /tmp/404.html
-echo '</BODY></HTML>' >> /tmp/404.html
-sudo mv /tmp/404.html templates/404.html
+#echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""http://www.w3.org/TR/html4/strict.dtd">' > /tmp/404.html
+#echo '<HTML><HEAD><TITLE>Not Found</TITLE>' >> /tmp/404.html
+#echo '<META HTTP-EQUIV="Content-Type" Content="text/html; charset=us-ascii"></HEAD>' >> /tmp/404.html
+#echo '<BODY><h2>Not Found</h2>' >> /tmp/404.html
+#echo '<hr><p>HTTP Error 404. The requested resource is not found.</p>' >> /tmp/404.html
+#echo '</BODY></HTML>' >> /tmp/404.html
+#sudo mv /tmp/404.html templates/404.html 
+sudo wget --quiet -P templates/ https://github.com/puzzlepeaches/sneaky_gophish/raw/main/files/404.html
 
 echo
 echo "#############################################"
