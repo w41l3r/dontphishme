@@ -11,7 +11,7 @@ echo
 echo "╔╦╗┌─┐┌┐┌┌┬┐┌─┐┬ ┬┬┌─┐┬ ┬┌┬┐┌─┐"
 echo " ║║│ ││││ │ ├─┘├─┤│└─┐├─┤│││├┤"
 echo "═╩╝└─┘┘└┘ ┴ ┴  ┴ ┴┴└─┘┴ ┴┴ ┴└─┘"
-echo "v0.1"
+echo "v0.2"
 echo
 
 CUSTOMDIR="gophish-custom-`date +%d%m%y%H%M%S`"
